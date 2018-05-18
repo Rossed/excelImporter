@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <p th:text="'Outcome: ' + ${outcome}"/>
+        <form method="POST" enctype="multipart/form-data" action="/file-upload">
+            <label class="btn btn-default">
+                Browse <input type="file" name="excelFile" hidden/>
+            </label>
+            <br/>
+            <input type="submit" value="upload" class="btn btn-primary"/>
+        </form>
+        <br/>
+        <a href="/write-db-to-file" class="btn btn-primary">Write DB Contents to file</a>
+    </div>
+</div>
+</body>
+</html>
